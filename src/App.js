@@ -33,8 +33,13 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
       const { robots, searchField, onSearchChange, isPending } = this.props;
-
+    if (robots === undefined) {
+      return (
+        <div></div>
+      )
+    }
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })
@@ -45,7 +50,7 @@ class App extends Component {
         <Scroll>
           { isPending ? <h1>Loading</h1> :
             <ErrorBoundry>
-              <CardList robots={filteredRobots} />
+              <CardList filteredRobots={this.filteredRobots} />
             </ErrorBoundry>
           }
         </Scroll>

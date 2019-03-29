@@ -13,7 +13,14 @@ export const setSearchField = (text) => {
     }
 }
 
-export const requestRobots= () => (dispatch) => {
+export const requestRobots = () => (dispatch) => {
+//     const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+
+//     dispatch({
+//         type: 'REQUEST_ROBOTS_SUCCESS',
+//         payload: response.data
+//     })
+// }
     dispatch({
         type: REQUEST_ROBOTS_PENDING,
     })
@@ -29,3 +36,12 @@ export const requestRobots= () => (dispatch) => {
         }))
 
 }
+// export const requestRobots = () => async (dispatch) => {
+//     ​
+//     const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+
+//     dispatch({
+//         type: 'REQUEST_ROBOTS_SUCCESS',
+//         payload: response.data
+//     })
+// }
